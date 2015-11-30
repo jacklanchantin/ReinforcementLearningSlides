@@ -77,7 +77,11 @@
 }
 
 \usepackage{graphicx} % Allows including images
+\graphicspath{ {Figures/} }
 \usepackage{booktabs} % Allows the use of \toprule, \midrule and \bottomrule in tables
+\usepackage{mathtools}
+\usepackage[mathscr]{euscript}
+
 
 %----------------------------------------------------------------------------------------
 %	TITLE PAGE
@@ -125,11 +129,54 @@
 
 \begin{frame}
 \frametitle{Reinforcement Learning}
+
+\begin{figure}[t]
+\includegraphics[scale=0.3]{AgentEnvironment}
+\centering
+\end{figure}
+
 \begin{itemize}
-\item At each ti
+\item At each time step $t$, the agent receives the environment \textbf{state} $S_t$ $\in$ $\mathscr{S}$, 
+ and the agent then selects an \textbf{action} $A_t \in$ $\mathscr{A}$($S_t$) 
+   \begin{itemize}
+   	\item $\mathscr{S}$ is the set of possible states
+        \item $\mathscr{A}$($S_t$) is set of actions available in state $S_t$
+      \end{itemize}
+\item One time step later, the agent receives a \textbf{reward}, $R_{t+1} \in$ $\mathscr{R}$ $\subset$ $\mathbb{R}$,
+and ends up in a new state $S_{t+1}$
 \end{itemize}
 \end{frame}
 
+%------------------------------------------------
+
+\begin{frame}
+\frametitle{Reinforcement Learning}
+\begin{itemize}
+\item At each time step, the agent implements a mapping $\pi_t$ from states to probabilities of selecting each possible action, where $\pi_t$ is called a \textbf{policy}
+   \begin{itemize}
+   	\item $\pi_t$($a|s$) = probability that $A_t$ = $a$ if $S_t$ = $s$
+      \end{itemize}
+\end{itemize}
+\begin{block}{Reinforcement Learning Objective}
+The agent's goal is to maximize the total amount of reward it receives over the long run by changing its policy as a result of its experience
+\end{block}
+\end{frame}
+
+
+%------------------------------------------------
+
+\begin{frame}
+\frametitle{Reinforcement Learning}
+\begin{itemize}
+\item Let the sequence of rewards after time step $t$ is $R_{t+1}, R_{t+2}, R_{t+3},...$, then we want to maximize the return $G_t$
+\item The agent chooses $A_t$ to maximize the discounted return: 
+\begin{equation}
+G_t = \sum_{k=0}^{\infty} \gamma^k R_{t+k+1}
+\end{equation}
+where $\gamma$ is the discount rate and 0 $\geq \gamma \leq$ 1
+\item The closer $\gamma$ is to 1, the more the agent accounts for future rewards
+\end{itemize}
+\end{frame}
 
 %------------------------------------------------
 \section{Markov Decision Processes} % Sections can be created in order to organize your presentation into discrete blocks, all sections and subsections are automatically printed in the table of contents as an overview of the talk
@@ -145,20 +192,13 @@
 
 %------------------------------------------------
 
-\begin{frame}
-\frametitle{Blocks of Highlighted Text}
-\begin{block}{Block 1}
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer lectus nisl, ultricies in feugiat rutrum, porttitor sit amet augue. Aliquam ut tortor mauris. Sed volutpat ante purus, quis accumsan dolor.
-\end{block}
 
-\begin{block}{Block 2}
-Pellentesque sed tellus purus. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Vestibulum quis magna at risus dictum tempor eu vitae velit.
-\end{block}
 
-\begin{block}{Block 3}
-Suspendisse tincidunt sagittis gravida. Curabitur condimentum, enim sed venenatis rutrum, ipsum neque consectetur orci, sed blandit justo nisi ac lacus.
-\end{block}
-\end{frame}
+
+
+
+
+
 
 %------------------------------------------------
 
