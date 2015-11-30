@@ -139,7 +139,7 @@
 \item At each time step $t$, the agent receives the environment \textbf{state} $S_t$ $\in$ $\mathscr{S}$, 
  and the agent then selects an \textbf{action} $A_t \in$ $\mathscr{A}$($S_t$) 
    \begin{itemize}
-   	\item $\mathscr{S}$ is the set of possible states
+   	\item $\mathscr{S}$ is the set of possible states (whatever information is available to the agent).
         \item $\mathscr{A}$($S_t$) is set of actions available in state $S_t$
       \end{itemize}
 \item One time step later, the agent receives a \textbf{reward}, $R_{t+1} \in$ $\mathscr{R}$ $\subset$ $\mathbb{R}$,
@@ -172,6 +172,7 @@ The agent's goal is to maximize the total amount of reward it receives over the 
 \item The agent chooses $A_t$ to maximize the discounted return: 
 \begin{equation}
 G_t = \sum_{k=0}^{\infty} \gamma^k R_{t+k+1}
+\nonumber
 \end{equation}
 where $\gamma$ is the discount rate and 0 $\geq \gamma \leq$ 1
 \item The closer $\gamma$ is to 1, the more the agent accounts for future rewards
@@ -185,9 +186,25 @@ where $\gamma$ is the discount rate and 0 $\geq \gamma \leq$ 1
 %\subsection{Subsection Example} % A subsection can be created just before a set of slides with a common theme to further break down your presentation into chunks
 
 \begin{frame}
-\title[MDP]{}
-\frametitle{Markov Decision Processes}
-
+\frametitle{Markov Property}
+\begin{itemize}
+\item Probability of transitioning to new state s:
+\small
+\begin{equation}
+p(s',r | s,a)=Pr\{S_{t+1}=s', R_{t+1}=r|S_0, A_0, R_1,...,S_{t-1},A_{t-1},R_t, S_t, A_t\}
+\nonumber
+\end{equation}
+\normalsize
+\item Probability with Markov assumption
+\begin{equation}
+p(s',r | s,a) = Pr\{S_{t+1} = s', R_{t+1} = r | S_t = s, A_t = a\}
+\nonumber
+\end{equation}
+\item Markov assumption allows us to predict the next state and expected rewards from knowledge of only the current state
+   \begin{itemize}
+   	\item Assume that the current state tells us everything we need to know for future (e.g. current state of checker board)
+      \end{itemize}
+\end{itemize}
 \end{frame}
 
 %------------------------------------------------
@@ -240,60 +257,15 @@ Treatment 3 & 0.0009271 & 0.296 \\
 \end{table}
 \end{frame}
 
-%------------------------------------------------
 
-\begin{frame}
-\frametitle{Theorem}
-\begin{theorem}[Mass--energy equivalence]
-$E = mc^2$
-\end{theorem}
-\end{frame}
-
-%------------------------------------------------
-
-\begin{frame}[fragile] % Need to use the fragile option when verbatim is used in the slide
-\frametitle{Verbatim}
-\begin{example}[Theorem Slide Code]
-\begin{verbatim}
-\begin{frame}
-\frametitle{Theorem}
-\begin{theorem}[Mass--energy equivalence]
-$E = mc^2$
-\end{theorem}
-\end{frame}\end{verbatim}
-\end{example}
-\end{frame}
-
-%------------------------------------------------
-
-\begin{frame}
-\frametitle{Figure}
-Uncomment the code on this slide to include your own image from the same directory as the template .TeX file.
-%\begin{figure}
-%\includegraphics[width=0.8\linewidth]{test}
-%\end{figure}
-\end{frame}
-
-%------------------------------------------------
-
-\begin{frame}[fragile] % Need to use the fragile option when verbatim is used in the slide
-\frametitle{Citation}
-An example of the \verb|\cite| command to cite within the presentation:\\~
-
-This statement requires citation \cite{p1}.
-\end{frame}
 
 %------------------------------------------------
 
 \begin{frame}
 \frametitle{References}
-\footnotesize{
-\begin{thebibliography}{99} % Beamer does not support BibTeX so references must be inserted manually as below
-\bibitem[Smith, 2012]{p1} John Smith (2012)
-\newblock Title of the publication
-\newblock \emph{Journal Name} 12(3), 45 -- 678.
-\end{thebibliography}
-}
+
+Richard S. Sutton and Andrew G. Barto. Reinforcement Learning: An Introduction. MIT Press 2015.
+
 \end{frame}
 
 %------------------------------------------------
