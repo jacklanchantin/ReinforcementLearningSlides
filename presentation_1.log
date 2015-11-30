@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.15 (TeX Live 2014) (preloaded format=pdflatex 2014.5.25)  30 NOV 2015 17:07
+This is pdfTeX, Version 3.14159265-2.6-1.40.15 (TeX Live 2014) (preloaded format=pdflatex 2014.5.25)  30 NOV 2015 18:04
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -976,7 +976,7 @@ LaTeX Font Warning: Font shape `OT1/cmss/m/n' in size <4> not available
 ] [3
 
 ]
-<Figures/AgentEnvironment.png, id=127, 692.5875pt x 257.96375pt>
+<Figures/AgentEnvironment.png, id=121, 692.5875pt x 257.96375pt>
 File: Figures/AgentEnvironment.png Graphic file (type png)
 
 <use Figures/AgentEnvironment.png>
@@ -1012,7 +1012,19 @@ File: ueus.fd 2013/01/14 v3.01 Euler Script
 
 ] [8
 
-] [9
+]
+Overfull \hbox (0.89262pt too wide) detected at line 250
+\OT1/mathkerncmss/m/sl/10.95 r\OT1/cmss/m/n/10.95 (\OT1/mathkerncmss/m/sl/10.95
+ s\OML/cmm/m/it/10.95 ; \OT1/mathkerncmss/m/sl/10.95 a\OML/cmm/m/it/10.95 ; \OT
+1/mathkerncmss/m/sl/10.95 s[]\OT1/cmss/m/n/10.95 ) = \U/msb/m/n/10.95 E\OT1/cms
+s/m/n/10.95 [\OT1/mathkerncmss/m/sl/10.95 R[]\OMS/cmsy/m/n/10.95 j\OT1/mathkern
+cmss/m/sl/10.95 S[] \OT1/cmss/m/n/10.95 = \OT1/mathkerncmss/m/sl/10.95 s\OML/cm
+m/m/it/10.95 ; \OT1/mathkerncmss/m/sl/10.95 A[] \OT1/cmss/m/n/10.95 = \OT1/math
+kerncmss/m/sl/10.95 a\OML/cmm/m/it/10.95 ; \OT1/mathkerncmss/m/sl/10.95 S[] \OT
+1/cmss/m/n/10.95 = \OT1/mathkerncmss/m/sl/10.95 s[]\OT1/cmss/m/n/10.95 ] = []
+ []
+
+[9
 
 ] [10
 
@@ -1026,28 +1038,28 @@ File: ueus.fd 2013/01/14 v3.01 Euler Script
 \tf@snm=\write8
 \openout8 = `presentation_1.snm'.
 
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 273.
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 273.
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 267.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 267.
  (./presentation_1.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 273.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 273.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 267.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 267.
 Package rerunfilecheck Info: File `presentation_1.out' has not changed.
-(rerunfilecheck)             Checksum: 7EFA95B8D5EFEE353EBEF561991BBC90;166.
+(rerunfilecheck)             Checksum: 4F19BE65BAA27B984A0B4F2672AF0D21;117.
 
 
 LaTeX Font Warning: Size substitutions with differences
 (Font)              up to 1.0pt have occurred.
 
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 273.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 267.
  ) 
 Here is how much of TeX's memory you used:
- 17430 strings out of 493117
- 336408 string characters out of 6135433
+ 17391 strings out of 493117
+ 335506 string characters out of 6135433
  402789 words of memory out of 5000000
- 20443 multiletter control sequences out of 15000+600000
+ 20405 multiletter control sequences out of 15000+600000
  15685 words of font info for 59 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 56i,16n,60p,394b,814s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 56i,16n,60p,394b,607s stack positions out of 5000i,500n,10000p,200000b,80000s
 </usr/local/texlive/2014/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb
 ></usr/local/texlive/2014/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb>
 </usr/local/texlive/2014/texmf-dist/fonts/type1/public/amsfonts/cm/cmss10.pfb><
@@ -1057,14 +1069,15 @@ r/local/texlive/2014/texmf-dist/fonts/type1/public/amsfonts/cm/cmssbx10.pfb></u
 sr/local/texlive/2014/texmf-dist/fonts/type1/public/amsfonts/cm/cmssi10.pfb></u
 sr/local/texlive/2014/texmf-dist/fonts/type1/public/amsfonts/cm/cmssi8.pfb></us
 r/local/texlive/2014/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr
-/local/texlive/2014/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy7.pfb></usr/l
-ocal/texlive/2014/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb></usr/loc
-al/texlive/2014/texmf-dist/fonts/type1/public/amsfonts/euler/eusm10.pfb></usr/l
-ocal/texlive/2014/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb>
-Output written on presentation_1.pdf (10 pages, 149361 bytes).
+/local/texlive/2014/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy6.pfb></usr/l
+ocal/texlive/2014/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy7.pfb></usr/loc
+al/texlive/2014/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb></usr/local
+/texlive/2014/texmf-dist/fonts/type1/public/amsfonts/euler/eusm10.pfb></usr/loc
+al/texlive/2014/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb>
+Output written on presentation_1.pdf (10 pages, 157219 bytes).
 PDF statistics:
- 373 PDF objects out of 1000 (max. 8388607)
- 328 compressed objects within 4 object streams
- 24 named destinations out of 1000 (max. 500000)
- 114 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 372 PDF objects out of 1000 (max. 8388607)
+ 326 compressed objects within 4 object streams
+ 23 named destinations out of 1000 (max. 500000)
+ 106 words of extra memory for PDF output out of 10000 (max. 10000000)
 

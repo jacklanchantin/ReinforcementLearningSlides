@@ -21,15 +21,12 @@
 \headcommand {\beamer@framepages {7}{7}}
 \headcommand {\slideentry {2}{0}{8}{8/8}{}{0}}
 \headcommand {\beamer@framepages {8}{8}}
-\headcommand {\sectionentry {3}{Second Section}{9}{Second Section}{0}}
-\headcommand {\beamer@sectionpages {7}{8}}
-\headcommand {\beamer@subsectionpages {7}{8}}
-\headcommand {\slideentry {3}{0}{9}{9/9}{}{0}}
+\headcommand {\slideentry {2}{0}{9}{9/9}{}{0}}
 \headcommand {\beamer@framepages {9}{9}}
-\headcommand {\slideentry {3}{0}{10}{10/10}{}{0}}
+\headcommand {\slideentry {2}{0}{10}{10/10}{}{0}}
 \headcommand {\beamer@framepages {10}{10}}
 \headcommand {\beamer@partpages {1}{10}}
-\headcommand {\beamer@subsectionpages {9}{10}}
-\headcommand {\beamer@sectionpages {9}{10}}
+\headcommand {\beamer@subsectionpages {7}{10}}
+\headcommand {\beamer@sectionpages {7}{10}}
 \headcommand {\beamer@documentpages {10}}
 \headcommand {\def \inserttotalframenumber {10}}

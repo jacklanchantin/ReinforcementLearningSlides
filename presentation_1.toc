@@ -1,4 +1,3 @@
 \beamer@endinputifotherversion {3.33pt}
 \beamer@sectionintoc {1}{Reinforcement Learning}{3}{0}{1}
 \beamer@sectionintoc {2}{Markov Decision Processes}{7}{0}{2}
-\beamer@sectionintoc {3}{Second Section}{9}{0}{3}
