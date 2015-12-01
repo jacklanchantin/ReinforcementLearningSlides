@@ -110,6 +110,7 @@
 
 \begin{frame}
 \titlepage % Print the title page as the first slide
+
 \end{frame}
 
 \begin{frame}
@@ -200,7 +201,7 @@ G_t = \sum_{k=0}^{T-t-1} \gamma^k R_{t+k+1}
 \nonumber
 \end{equation}
 where $\gamma$ is the discount rate and 0 $\leq \gamma \leq$ 1. The closer $\gamma$ is to 1, the more the agent accounts for future rewards
-\item \textbf{Select actions to maximise future reward}
+\item \textbf{Learn a mapping of S $\rightarrow$ A which maximises future reward}
 \end{itemize}
 \end{frame}
 
@@ -210,27 +211,6 @@ where $\gamma$ is the discount rate and 0 $\leq \gamma \leq$ 1. The closer $\gam
 
 %\subsection{Subsection Example} % A subsection can be created just before a set of slides with a common theme to further break down your presentation into chunks
 
-\begin{frame}
-\frametitle{Markov Property}
-\begin{itemize}
-\item Probability of transitioning to new state s' with reward r:
-\small
-\begin{equation}
-p(s',r | s,a)=Pr\{S_{t+1}=s', R_{t+1}=r|S_0, A_0, R_1,...,S_{t-1},A_{t-1},R_t, S_t, A_t\}
-\nonumber
-\end{equation}
-\normalsize
-\item Probability with Markov assumption:
-\begin{equation}
-p(s',r | s,a) = Pr\{S_{t+1} = s', R_{t+1} = r | S_t = s, A_t = a\}
-\nonumber
-\end{equation}
-\item Markov assumption allows us to predict the next state and expected rewards from knowledge of only the current state
-   \begin{itemize}
-   	\item Assume that the current state tells us everything we need to know for future (e.g. current state of checker board)
-      \end{itemize}
-\end{itemize}
-\end{frame}
 
 %------------------------------------------------
 
@@ -245,6 +225,7 @@ p(s',r | s,a) = Pr\{S_{t+1} = s', R_{t+1} = r | S_t = s, A_t = a\}
 p(s',r | s,a) = Pr\{S_{t+1} = s', R_{t+1} = r | S_t = s, A_t = a\}
 \nonumber
 \end{equation}
+We assume that the current state tells us everything we need to know for future (e.g. current state of checker board)
 \item From this probability representation, we can compute anything else we might need to know about the environment...
 \end{itemize}
 \end{frame}
@@ -345,7 +326,6 @@ $q_\pi(s,a)$, is the \textbf{expected return starting from s, taking the action 
 q_\pi(s) = \mathbb{E}_\pi[G_t | S_t = s, A_t = a] = \mathbb{E}_\pi\Bigg[\sum_{k=0}^{\infty} \gamma^k R_{t+k+1} \Biggm\lvert S_t = s, A_t = a \Bigg]
 \nonumber
 \end{equation}
-\item Both $v_\pi$ and $q_\pi$ can be estimated from experience using Monte Carlo methods
 \end{itemize}
 \end{frame}
 
@@ -393,21 +373,36 @@ v_{\ast}(s) = \underset{\pi}{\max} \ v_\pi(s) \ \textrm{for all} \ s \in \mathsc
 \nonumber
 \end{equation}
 \item The \textit{optimal action-value functions} are denoted $q_{\ast}$ and defined:
-\begin{equation}
-q_{\ast}(s,a) = \underset{\pi}{\max} \ q_\pi(s,a) \ \textrm{for all} \ s \in \mathscr{S} \textrm{ and } a \in \mathscr{A}
+\begin{align*}
+q_{\ast}(s,a) &= \underset{\pi}{\max} \ q_\pi(s,a) \ \textrm{for all} \ s \in \mathscr{S} \textrm{ and } a \in \mathscr{A} \\
+&= \mathbb{E}[R_{t+1} + \gamma v_{\ast}(S_{t+1}) | S_t = a, A_t = a]
 \nonumber
-\end{equation}
+\end{align*}
 \end{itemize}
 \end{frame}
+
 
 %------------------------------------------------
 
 \begin{frame}
-\frametitle{References}
+\frametitle{Value Iteration}
+\begin{itemize}
+\item Method for approximating $v_{\ast}$
 
-Richard S. Sutton and Andrew G. Barto. Reinforcement Learning: An Introduction. MIT Press 2015.
-
+\end{itemize}
 \end{frame}
+%------------------------------------------------
+
+
+%The case of (small) finite MDPs is relatively well understood by now. However, due to the lack of algorithms that would provably scale well with the number of states (or scale to problems with infinite state spaces), in practice people resort to simple exploration methods.
+
+
+%\begin{frame}
+%\frametitle{References}
+%
+%Richard S. Sutton and Andrew G. Barto. Reinforcement Learning: An Introduction. MIT Press 2015.
+%
+%\end{frame}
 
 %------------------------------------------------
 
