@@ -81,6 +81,8 @@
 \usepackage{booktabs} % Allows the use of \toprule, \midrule and \bottomrule in tables
 \usepackage{mathtools}
 \usepackage[mathscr]{euscript}
+\usepackage{amssymb}
+\usepackage{amsmath}
 
 
 %----------------------------------------------------------------------------------------
@@ -188,14 +190,14 @@ where $\gamma$ is the discount rate and 0 $\geq \gamma \leq$ 1
 \begin{frame}
 \frametitle{Markov Property}
 \begin{itemize}
-\item Probability of transitioning to new state s:
+\item Probability of transitioning to new state s with reward r:
 \small
 \begin{equation}
 p(s',r | s,a)=Pr\{S_{t+1}=s', R_{t+1}=r|S_0, A_0, R_1,...,S_{t-1},A_{t-1},R_t, S_t, A_t\}
 \nonumber
 \end{equation}
 \normalsize
-\item Probability with Markov assumption
+\item Probability with Markov assumption:
 \begin{equation}
 p(s',r | s,a) = Pr\{S_{t+1} = s', R_{t+1} = r | S_t = s, A_t = a\}
 \nonumber
@@ -215,7 +217,7 @@ p(s',r | s,a) = Pr\{S_{t+1} = s', R_{t+1} = r | S_t = s, A_t = a\}
 \frametitle{Markov Decision Processes}
 \begin{itemize}
 \item A R.I. task that satisfies the Markov property is called a Markov Decision Process (MDP)
-\item Given any state $s$ and action $a$, the probability of each possible pair of next state and reward ($s'$, r$), is denoted
+\item Given any state $s$ and action $a$, the probability of each possible pair of next state and reward ($s'$, $r$), is denoted
 \begin{equation}
 p(s',r | s,a) = Pr\{S_{t+1} = s', R_{t+1} = r | S_t = s, A_t = a\}
 \nonumber
@@ -231,14 +233,14 @@ From this probability representation, we can compute anything else we might need
 \begin{frame}
 \frametitle{Markov Decision Processes}
 \begin{itemize}
-\item Expected rewards for state--action pairs:
-\begin{equation}
-r(s,a) = \mathbb{E}[R_{t+1} | S_t = s, A_t = a] = \sum_{r \in \mathscr{R} } r \sum_{s' \in \mathscr{S} } p(s',r | s,a)
-\nonumber
-\end{equation}
 \item State-transition probabilities:
 \begin{equation}
 p(s' | s,a) = Pr\{S_{t+1} = s' | S_t = s, A_t = a\} =  \sum_{r \in \mathscr{R} } p(s',r | s,a)
+\nonumber
+\end{equation}
+\item Expected rewards for state--action pairs:
+\begin{equation}
+r(s,a) = \mathbb{E}[R_{t+1} | S_t = s, A_t = a] = \sum_{r \in \mathscr{R} } r \sum_{s' \in \mathscr{S} } p(s',r | s,a)
 \nonumber
 \end{equation}
 \item Expected rewards for state--action--next-state triples:
@@ -249,6 +251,45 @@ r(s,a,s') = \mathbb{E}[R_{t+1} | S_t = s, A_t = a, S_{t+1}  = s'] =  \dfrac{ \su
 \end{itemize}
 \end{frame}
 
+
+%------------------------------------------------
+\section{Value Functions} % Sections can be created in order to organize your presentation into discrete blocks, all sections and subsections are automatically printed in the table of contents as an overview of the talk
+%------------------------------------------------
+
+%\subsection{Subsection Example} % A subsection can be created just before a set of slides with a common theme to further break down your presentation into chunks
+
+\begin{frame}
+\frametitle{Value Functions}
+\begin{itemize}
+\item Value Functions: functions of state--action pairs that estimate how good it is for the agent to perform a given action in a given state. 
+   \begin{itemize}
+   	\item "How good" is defined in terms of future rewards that can be expected (i.e. expected return)
+      \end{itemize}
+\item Recall that a policy $\pi$ maps a state $s$ and action $a$ to probability $\pi(a|s)$
+\item The value of a state $s$ under policy $\pi$, denoted $v_\pi(s)$, is the expected return when starting in state $s$ and following $\pi$ thereafter
+
+\end{itemize}
+\end{frame}
+
+%------------------------------------------------
+
+\begin{frame}
+\frametitle{Value Functions}
+\begin{itemize}
+\item \textbf{State-value} function for policy $\pi$:
+\begin{equation}
+v_\pi(s) = \mathbb{E}_\pi[G_t | S_t = s] = \mathbb{E}_\pi\Bigg[\sum_{k=0}^{\infty} \gamma^k R_{t+k+1} \Biggm\lvert S_t = s \Bigg]
+\nonumber
+\end{equation}
+$\mathbb{E}_\pi[\cdot]$ is the expected value of a r.v. given the agent follows policy $\pi$
+\item \textbf{Action-value} function for policy $\pi$:
+\begin{equation}
+q_\pi(s) = \mathbb{E}_\pi[G_t | S_t = s, A_t = a] = \mathbb{E}_\pi\Bigg[\sum_{k=0}^{\infty} \gamma^k R_{t+k+1} \Biggm\lvert S_t = s, A_t = a \Bigg]
+\nonumber
+\end{equation}
+\item Both $v_\pi$ and $q_\pi$ can be estimated from experience using Monte Carlo methods
+\end{itemize}
+\end{frame}
 
 
 
