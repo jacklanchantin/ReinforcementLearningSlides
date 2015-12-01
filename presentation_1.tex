@@ -187,26 +187,11 @@ At each step $t$,
 \end{columns}
 \end{frame}
 
-%------------------------------------------------
-
-\begin{frame}
-\frametitle{Policies}
-\begin{itemize}
-\item At each time step, the agent implements a mapping $\pi_t$ from states to probabilities of selecting each possible action, where $\pi_t$ is called a \textbf{policy}
-   \begin{itemize}
-   	\item $\pi_t$($a|s$) = probability that $A_t$ = $a$ if $S_t$ = $s$
-      \end{itemize}
-\end{itemize}
-\begin{block}{Reinforcement Learning Objective}
-The agent's goal is to maximize the total amount of reward it receives over the long run by changing its policy as a result of its experience
-\end{block}
-\end{frame}
-
 
 %------------------------------------------------
 
 \begin{frame}
-\frametitle{Reinforcement Learning}
+\frametitle{Reinforcement Learning Objective}
 \begin{itemize}
 \item If the sequence of rewards after time step $t$ is $R_{t+1}, R_{t+2}, R_{t+3},...$, then we want to maximize the return $G_t$
 \item The agent chooses $A_t$ to maximize the discounted return: 
@@ -214,8 +199,8 @@ The agent's goal is to maximize the total amount of reward it receives over the 
 G_t = \sum_{k=0}^{T-t-1} \gamma^k R_{t+k+1}
 \nonumber
 \end{equation}
-where $\gamma$ is the discount rate and 0 $\leq \gamma \leq$ 1
-\item The closer $\gamma$ is to 1, the more the agent accounts for future rewards
+where $\gamma$ is the discount rate and 0 $\leq \gamma \leq$ 1. The closer $\gamma$ is to 1, the more the agent accounts for future rewards
+\item \textbf{Select actions to maximise future reward}
 \end{itemize}
 \end{frame}
 
@@ -305,17 +290,19 @@ r(s,a,s') = \mathbb{E}[R_{t+1} | S_t = s, A_t = a, S_{t+1}  = s'] =  \dfrac{ \su
 
 %\subsection{Subsection Example} % A subsection can be created just before a set of slides with a common theme to further break down your presentation into chunks
 
-\begin{frame}
-\frametitle{Value Functions}
-\begin{itemize}
-\item Value Functions: functions of state--action pairs that estimate how good it is for the agent to perform a given action in a given state. 
-   \begin{itemize}
-   	\item "How good" is defined in terms of future rewards that can be expected (i.e. expected return)
-      \end{itemize}
-\item Recall that a policy $\pi$ maps a state $s$ and action $a$ to probability $\pi(a|s)$
-\item The value of a state $s$ under policy $\pi$, denoted $v_\pi(s)$, is the expected return when starting in state $s$ and following $\pi$ thereafter
+%------------------------------------------------
 
+\begin{frame}
+\frametitle{Policies}
+\begin{itemize}
+\item At each time step, the agent implements a mapping $\pi$ from states to probabilities of selecting each possible action, where $\pi$ is called a \textbf{policy}
+   \begin{itemize}
+   	\item $\pi_t$($a|s$) = probability that $A_t$ = $a$ if $S_t$ = $s$
+      \end{itemize}
 \end{itemize}
+\begin{block}{Reinforcement Learning Objective}
+The agent's goal is to maximize the total amount of reward it receives over the long run by changing its policy as a result of its experience
+\end{block}
 \end{frame}
 
 %------------------------------------------------
@@ -323,13 +310,37 @@ r(s,a,s') = \mathbb{E}[R_{t+1} | S_t = s, A_t = a, S_{t+1}  = s'] =  \dfrac{ \su
 \begin{frame}
 \frametitle{Value Functions}
 \begin{itemize}
-\item \textbf{State-value} function for policy $\pi$:
+\item Almost all RL algorithms involve estimating value functions
+\item \textbf{Value Functions:} functions of states (or state--action pairs) that estimate how good it is for the agent to be in a certain state (or to perform an action in a given state). 
+   \begin{itemize}
+   	\item "How good" is defined in terms of future rewards that can be expected (i.e. expected return)
+      \end{itemize}
+\end{itemize}
+\end{frame}
+
+%------------------------------------------------
+
+\begin{frame}
+\frametitle{State-Value Function for policy $\pi$}
+\begin{itemize}
+\item Recall that a policy $\pi$ maps a state $s$ and action $a$ to the probability $\pi(a|s)$ of doing $a$ when in $s$
+\item The value of a state $s$ under policy $\pi$, denoted $v_\pi(s)$, is the \textbf{expected return when starting in state $s$ and following $\pi$ thereafter}:
 \begin{equation}
 v_\pi(s) = \mathbb{E}_\pi[G_t | S_t = s] = \mathbb{E}_\pi\Bigg[\sum_{k=0}^{\infty} \gamma^k R_{t+k+1} \Biggm\lvert S_t = s \Bigg]
 \nonumber
 \end{equation}
 $\mathbb{E}_\pi[\cdot]$ is the expected value of a r.v. given the agent follows policy $\pi$
-\item \textbf{Action-value} function for policy $\pi$:
+\end{itemize}
+\end{frame}
+
+
+%------------------------------------------------
+
+\begin{frame}
+\frametitle{Action-Value Function for policy $\pi$}
+\begin{itemize}
+\item The value of taking action $a$ in state $s$ under a policy $\pi$, denoted
+$q_\pi(s,a)$, is the \textbf{expected return starting from s, taking the action a, and following policy $\pi$ thereafter}:
 \begin{equation}
 q_\pi(s) = \mathbb{E}_\pi[G_t | S_t = s, A_t = a] = \mathbb{E}_\pi\Bigg[\sum_{k=0}^{\infty} \gamma^k R_{t+k+1} \Biggm\lvert S_t = s, A_t = a \Bigg]
 \nonumber
@@ -345,10 +356,49 @@ q_\pi(s) = \mathbb{E}_\pi[G_t | S_t = s, A_t = a] = \mathbb{E}_\pi\Bigg[\sum_{k=
 \frametitle{Computing Value Functions}
 \begin{itemize}
 \item Key idea of reinforcement learning is to use value functions to search for a good policy $\pi$
-\item Can use dynamic programming techniques to compute optimal value functions, and thus find optimal policies
+\item Can use dynamic programming techniques to compute optimal value functions, and thus find optimal policies 
+\begin{align*}
+v_\pi(s) &= \mathbb{E}_\pi[G_t | S_t = s] \\
+&= \mathbb{E}_\pi\Bigg[\sum_{k=0}^{\infty} \gamma^k R_{t+k+1} \Biggm\lvert S_t = s \Bigg] \\
+&= \sum_{a}\pi(a|s) \sum_{s',r} p(s',r|s,a) \big[ r + \gamma v_\pi(s') \big]
+\nonumber
+\end{align*}
 \end{itemize}
 \end{frame}
 
+%------------------------------------------------
+
+\begin{frame}
+\frametitle{Optimal Value Functions}
+\begin{itemize}
+\item Solving a reinforcement learning task means finding a policy that achieves a
+high reward over the long run
+\item A policy $\pi$ is better than $\pi'$ if its expected return is $\geq$ to that of $\pi'$ for all states
+   \begin{itemize}
+   	\item I.e. $\pi \geq \pi'$ iff $v_\pi(s) \geq v_\pi'(s)$ for all $s \in \mathscr{S}$
+      \end{itemize}
+\end{itemize}
+\end{frame}
+
+
+%------------------------------------------------
+
+\begin{frame}
+\frametitle{Optimal Value Functions}
+\begin{itemize}
+\item The $optimal$ policies are denoted $\pi_{\ast}$
+\item The \textit{optimal state-value functions} are denoted $v_{\ast}$ and defined:
+\begin{equation}
+v_{\ast}(s) = \underset{\pi}{\max} \ v_\pi(s) \ \textrm{for all} \ s \in \mathscr{S}
+\nonumber
+\end{equation}
+\item The \textit{optimal action-value functions} are denoted $q_{\ast}$ and defined:
+\begin{equation}
+q_{\ast}(s,a) = \underset{\pi}{\max} \ q_\pi(s,a) \ \textrm{for all} \ s \in \mathscr{S} \textrm{ and } a \in \mathscr{A}
+\nonumber
+\end{equation}
+\end{itemize}
+\end{frame}
 
 %------------------------------------------------
 
