@@ -159,6 +159,38 @@ and ends up in a new state $S_{t+1}$
 
 \begin{frame}
 \frametitle{Reinforcement Learning}
+\begin{columns}[c] % The "c" option specifies centered vertical alignment while the "t" option is used for top vertical alignment
+
+\column{.45\textwidth} % Left column and width
+At each step $t$,
+\begin{itemize}
+\item  The agent:
+   \begin{itemize}
+   	\item Receives state $S_t$
+	\item Receives scalar reward $R_t$
+	\item Executes action $A_t$
+      \end{itemize}
+\item The environment:
+   \begin{itemize}
+   	\item Receives action $A_t$
+	\item Emits state $S_t$
+	\item Emits scalar reward $R_t$
+      \end{itemize}
+\end{itemize}
+
+\column{.5\textwidth} % Right column and width
+\begin{figure}[t]
+\includegraphics[scale=0.2]{EarthBrain}
+\centering
+\end{figure}
+
+\end{columns}
+\end{frame}
+
+%------------------------------------------------
+
+\begin{frame}
+\frametitle{Policies}
 \begin{itemize}
 \item At each time step, the agent implements a mapping $\pi_t$ from states to probabilities of selecting each possible action, where $\pi_t$ is called a \textbf{policy}
    \begin{itemize}
@@ -228,13 +260,11 @@ p(s',r | s,a) = Pr\{S_{t+1} = s', R_{t+1} = r | S_t = s, A_t = a\}
 p(s',r | s,a) = Pr\{S_{t+1} = s', R_{t+1} = r | S_t = s, A_t = a\}
 \nonumber
 \end{equation}
-From this probability representation, we can compute anything else we might need to know about the environment
+\item From this probability representation, we can compute anything else we might need to know about the environment...
 \end{itemize}
 \end{frame}
 
 %------------------------------------------------
-
-
 
 \begin{frame}
 \frametitle{Markov Decision Processes}
@@ -254,6 +284,17 @@ r(s,a) = \mathbb{E}[R_{t+1} | S_t = s, A_t = a] = \sum_{r \in \mathscr{R} } r \s
 r(s,a,s') = \mathbb{E}[R_{t+1} | S_t = s, A_t = a, S_{t+1}  = s'] =  \dfrac{ \sum_{r \in \mathscr{R} } r*p(s',r | s,a)}{p(s'| s,a)}
 \nonumber
 \end{equation}
+\end{itemize}
+\end{frame}
+
+%------------------------------------------------
+
+\begin{frame}
+\frametitle{MDP Example}
+\begin{itemize}
+\item At each tilmestep $t$, a can-collecting robot decides whether it should (1) actively search for a can, 
+(2) remain in place and wait for someone to bring it a can, or (3) go back to charging station to recharge its battery
+
 \end{itemize}
 \end{frame}
 
