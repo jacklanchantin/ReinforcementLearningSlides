@@ -127,7 +127,7 @@
 \begin{frame}
 \frametitle{Reinforcement Learning}
 \begin{itemize}
-\item \textbf{Learning from interaction to achieve a goal.}
+\item \textbf{Learning from interactions to achieve a goal}
 \item \textbf{Agent}: learner and decision maker
 \item \textbf{Environment}: what the learner interacts with (everything outside the agent)
 \end{itemize}
@@ -265,7 +265,7 @@ r(s,a,s') = \mathbb{E}[R_{t+1} | S_t = s, A_t = a, S_{t+1}  = s'] =  \dfrac{ \su
 \begin{frame}
 \frametitle{Policies}
 \begin{itemize}
-\item At each time step, the agent implements a mapping $\pi$ from states to probabilities of selecting each possible action, where $\pi$ is called a \textbf{policy}
+\item At each time step, the agent implements a mapping $\pi$ states to actions, where $\pi$ is called a \textbf{policy}
    \begin{itemize}
    	\item $\pi_t$($a|s$) = probability that $A_t$ = $a$ if $S_t$ = $s$
       \end{itemize}
@@ -285,6 +285,7 @@ The agent's goal is to maximize the total amount of reward it receives over the 
    \begin{itemize}
    	\item "How good" is defined in terms of future rewards that can be expected (i.e. expected return)
       \end{itemize}
+\item Two types of value functions: State-Value and Action-Value
 \end{itemize}
 \end{frame}
 
@@ -318,32 +319,16 @@ q_\pi(s,a) = \mathbb{E}_\pi[G_t | S_t = s, A_t = a] = \mathbb{E}_\pi\Bigg[\sum_{
 \end{frame}
 
 
-%------------------------------------------------
-
-\begin{frame}
-\frametitle{Computing Value Functions}
-\begin{itemize}
-\item Key idea of reinforcement learning is to use value functions to search for a good policy $\pi$
-\item Can use dynamic programming techniques to compute optimal value functions, and thus find optimal policies 
-\begin{align*}
-v_\pi(s) &= \mathbb{E}_\pi[G_t | S_t = s] \\
-&= \mathbb{E}_\pi\Bigg[\sum_{k=0}^{\infty} \gamma^k R_{t+k+1} \Biggm\lvert S_t = s \Bigg] \\
-&= \sum_{a}\pi(a|s) \sum_{s',r} p(s',r|s,a) \big[ r + \gamma v_\pi(s') \big]
-\nonumber
-\end{align*}
-\end{itemize}
-\end{frame}
 
 %------------------------------------------------
 
 \begin{frame}
 \frametitle{Optimal Value Functions}
 \begin{itemize}
-\item Solving a reinforcement learning task means finding a policy that achieves a
-high reward over the long run
+\item Key idea of reinforcement learning is to use value functions to search for a good policy $\pi$
 \item A policy $\pi$ is better than $\pi'$ if its expected return is $\geq$ to that of $\pi'$ for all states
    \begin{itemize}
-   	\item I.e. $\pi \geq \pi'$ iff $v_\pi(s) \geq v_\pi'(s)$ for all $s \in \mathscr{S}$
+   	\item I.e. $\pi \geq \pi'$ iff $v_\pi(s) \geq v_{\pi'}(s)$ for all $s \in \mathscr{S}$
       \end{itemize}
 \end{itemize}
 \end{frame}
@@ -369,6 +354,22 @@ q_{\ast}(s,a) &= \underset{\pi}{\max} \ q_\pi(s,a) \ \textrm{for all} \ s \in \m
 \end{itemize}
 \end{frame}
 
+%------------------------------------------------
+
+\begin{frame}
+\frametitle{Computing Value Functions}
+\begin{itemize}
+\item Expand out State-Value function
+\begin{align*}
+v_\pi(s) &= \mathbb{E}_\pi[G_t | S_t = s] \\
+&= \mathbb{E}_\pi\Bigg[\sum_{k=0}^{\infty} \gamma^k R_{t+k+1} \Biggm\lvert S_t = s \Bigg] \\
+&= \sum_{a}\pi(a|s) \sum_{s',r} p(s',r|s,a) \big[ r + \gamma v_\pi(s') \big]
+\nonumber
+\end{align*}
+
+\item Can use dynamic programming techniques to compute optimal value functions, and thus find optimal policies 
+\end{itemize}
+\end{frame}
 
 %------------------------------------------------
 
@@ -387,10 +388,85 @@ v_{k+1}(s) &= \underset{a}{\max} \ \mathbb{E}[R_{t+1} + \gamma v_{k}(S_{t+1}) | 
 \end{frame}
 %------------------------------------------------
 
-\begin{frame}
-\frametitle{MDP Example}
+%------------------------------------------------
+\section{Examples} % Sections can be created in order to organize your presentation into discrete blocks, all sections and subsections are automatically printed in the table of contents as an overview of the talk
 
+%------------------------------------------------
+
+
+\begin{frame}
+\frametitle{Board Example}
+\begin{figure}[t]
+\includegraphics[scale=0.3]{Board1}
+\centering
+\end{figure}
+$r(s,a)$ (immediate reward) values
+\centering
 \end{frame}
+
+\begin{frame}
+\frametitle{Board Example}
+\begin{figure}[t]
+\includegraphics[scale=0.3]{Board2}
+\centering
+\end{figure}
+State-Value function $v_*(s)$ values
+\centering
+\end{frame}
+
+\begin{frame}
+\frametitle{Board Example}
+\begin{figure}[t]
+\includegraphics[scale=0.3]{Board3}
+\centering
+\end{figure}
+Action-Value function $q_*(s,a)$ values
+\centering
+\end{frame}
+
+\begin{frame}
+\frametitle{Board Example}
+\begin{figure}[t]
+\includegraphics[scale=0.3]{Board4}
+\centering
+\end{figure}
+One possible $\pi_*$
+\centering
+\end{frame}
+
+
+%------------------------------------------------
+
+
+\begin{frame}
+\frametitle{Maze Example}
+\begin{figure}[t]
+\includegraphics[scale=0.3]{Maze1}
+\centering
+\end{figure}
+\end{frame}
+
+%------------------------------------------------
+
+\begin{frame}
+\frametitle{Maze Example}
+\begin{figure}[t]
+\includegraphics[scale=0.3]{Maze3}
+\centering
+\end{figure}
+\end{frame}
+
+%------------------------------------------------
+
+\begin{frame}
+\frametitle{Maze Example}
+\begin{figure}[t]
+\includegraphics[scale=0.3]{Maze2}
+\centering
+\end{figure}
+\end{frame}
+
+
 
 %The case of (small) finite MDPs is relatively well understood by now. However, due to the lack of algorithms that would provably scale well with the number of states (or scale to problems with infinite state spaces), in practice people resort to simple exploration methods.
 

@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.15 (TeX Live 2014) (preloaded format=pdflatex 2014.5.25)  1 DEC 2015 02:01
+This is pdfTeX, Version 3.14159265-2.6-1.40.15 (TeX Live 2014) (preloaded format=pdflatex 2014.5.25)  1 DEC 2015 03:24
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -978,7 +978,7 @@ LaTeX Font Warning: Font shape `OT1/cmss/m/n' in size <4> not available
 ] [4
 
 ]
-<Figures/AgentEnvironment.png, id=159, 692.5875pt x 257.96375pt>
+<Figures/AgentEnvironment.png, id=166, 692.5875pt x 257.96375pt>
 File: Figures/AgentEnvironment.png Graphic file (type png)
 
 <use Figures/AgentEnvironment.png>
@@ -1007,7 +1007,7 @@ File: ueus.fd 2013/01/14 v3.01 Euler Script
 ) [5
 
  <./Figures/AgentEnvironment.png>]
-<Figures/EarthBrain.png, id=195, 781.92125pt x 761.84625pt>
+<Figures/EarthBrain.png, id=202, 781.92125pt x 761.84625pt>
 File: Figures/EarthBrain.png Graphic file (type png)
 
 <use Figures/EarthBrain.png>
@@ -1045,7 +1045,7 @@ kerncmss/m/sl/10.95 a\OML/cmm/m/it/10.95 ; \OT1/mathkerncmss/m/sl/10.95 S[] \OT
 ] [14
 
 ]
-Overfull \hbox (10.01758pt too wide) detected at line 318
+Overfull \hbox (10.01758pt too wide) detected at line 319
 \OT1/mathkerncmss/m/sl/10.95 q[]\OT1/cmss/m/n/10.95 (\OT1/mathkerncmss/m/sl/10.
 95 s\OML/cmm/m/it/10.95 ; \OT1/mathkerncmss/m/sl/10.95 a\OT1/cmss/m/n/10.95 ) =
  \U/msb/m/n/10.95 E[]\OT1/cmss/m/n/10.95 [\OT1/mathkerncmss/m/sl/10.95 G[]\OMS/
@@ -1067,20 +1067,107 @@ b/m/n/10.95 E[][] [] \OML/cmm/m/it/10.95 ^^M[]\OT1/mathkerncmss/m/sl/10.95 R[]
 ] [18
 
 ]
-LaTeX Font Info:    Try loading font information for OMS+cmss on input line 387
+LaTeX Font Info:    Try loading font information for OMS+cmss on input line 388
 .
-LaTeX Font Info:    No file OMScmss.fd. on input line 387.
+LaTeX Font Info:    No file OMScmss.fd. on input line 388.
 
 
 LaTeX Font Warning: Font shape `OMS/cmss/m/n' undefined
 (Font)              using `OMS/cmsy/m/n' instead
-(Font)              for symbol `textbraceleft' on input line 387.
+(Font)              for symbol `textbraceleft' on input line 388.
 
 [19
 
-] [20
+] (./presentation_1.toc) [20
 
 ]
+<Figures/Board1.png, id=622, 520.94624pt x 334.24875pt>
+File: Figures/Board1.png Graphic file (type png)
+
+<use Figures/Board1.png>
+Package pdftex.def Info: Figures/Board1.png used on input line 405.
+(pdftex.def)             Requested size: 156.28508pt x 100.27539pt.
+ [21
+
+ <./Figures/Board1.png>]
+<Figures/Board2.png, id=650, 503.8825pt x 330.23375pt>
+File: Figures/Board2.png Graphic file (type png)
+
+<use Figures/Board2.png>
+Package pdftex.def Info: Figures/Board2.png used on input line 415.
+(pdftex.def)             Requested size: 151.16591pt x 99.07088pt.
+ [22
+
+ <./Figures/Board2.png>]
+<Figures/Board3.png, id=678, 506.89375pt x 334.24875pt>
+File: Figures/Board3.png Graphic file (type png)
+
+<use Figures/Board3.png>
+Package pdftex.def Info: Figures/Board3.png used on input line 425.
+(pdftex.def)             Requested size: 152.06929pt x 100.27539pt.
+ [23
+
+ <./Figures/Board3.png>]
+<Figures/Board4.png, id=707, 510.90875pt x 331.2375pt>
+File: Figures/Board4.png Graphic file (type png)
+
+<use Figures/Board4.png>
+Package pdftex.def Info: Figures/Board4.png used on input line 435.
+(pdftex.def)             Requested size: 153.2738pt x 99.37201pt.
+ [24
+
+ <./Figures/Board4.png>]
+<Figures/Maze1.png, id=735, 1200.485pt x 715.67375pt>
+File: Figures/Maze1.png Graphic file (type png)
+ <use Figures/Maze1.png>
+Package pdftex.def Info: Figures/Maze1.png used on input line 447.
+(pdftex.def)             Requested size: 360.14828pt x 214.70378pt.
+
+Overfull \hbox (17.85298pt too wide) in paragraph at lines 447--447
+ [] 
+ []
+
+
+Overfull \vbox (11.2332pt too high) detected at line 447
+ []
+
+[25
+
+ <./Figures/Maze1.png>] <Figures/Maze3.png, id=764, 1204.5pt x 715.67375pt>
+File: Figures/Maze3.png Graphic file (type png)
+
+<use Figures/Maze3.png>
+Package pdftex.def Info: Figures/Maze3.png used on input line 457.
+(pdftex.def)             Requested size: 361.35278pt x 214.70378pt.
+
+Overfull \hbox (19.05748pt too wide) in paragraph at lines 457--457
+ [] 
+ []
+
+
+Overfull \vbox (11.2332pt too high) detected at line 457
+ []
+
+[26
+
+ <./Figures/Maze3.png>] <Figures/Maze2.png, id=791, 1204.5pt x 711.65875pt>
+File: Figures/Maze2.png Graphic file (type png)
+
+<use Figures/Maze2.png>
+Package pdftex.def Info: Figures/Maze2.png used on input line 467.
+(pdftex.def)             Requested size: 361.35278pt x 213.49927pt.
+
+Overfull \hbox (19.05748pt too wide) in paragraph at lines 467--467
+ [] 
+ []
+
+
+Overfull \vbox (10.02869pt too high) detected at line 467
+ []
+
+[27
+
+ <./Figures/Maze2.png>]
 \tf@nav=\write6
 \openout6 = `presentation_1.nav'.
 
@@ -1090,13 +1177,13 @@ LaTeX Font Warning: Font shape `OMS/cmss/m/n' undefined
 \tf@snm=\write8
 \openout8 = `presentation_1.snm'.
 
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 407.
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 407.
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 483.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 483.
  (./presentation_1.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 407.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 407.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 483.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 483.
 Package rerunfilecheck Info: File `presentation_1.out' has not changed.
-(rerunfilecheck)             Checksum: 624B1FFDF61AE4B37B3BF98DAE6F0A2C;167.
+(rerunfilecheck)             Checksum: 0AB560EC8C6E7F18CB2B2C824769D88A;210.
 
 
 LaTeX Font Warning: Size substitutions with differences
@@ -1105,13 +1192,13 @@ LaTeX Font Warning: Size substitutions with differences
 
 LaTeX Font Warning: Some font shapes were not available, defaults substituted.
 
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 407.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 483.
  ) 
 Here is how much of TeX's memory you used:
- 17489 strings out of 493117
- 337100 string characters out of 6135433
+ 17559 strings out of 493117
+ 338121 string characters out of 6135433
  402844 words of memory out of 5000000
- 20468 multiletter control sequences out of 15000+600000
+ 20514 multiletter control sequences out of 15000+600000
  18491 words of font info for 69 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  56i,16n,64p,394b,729s stack positions out of 5000i,500n,10000p,200000b,80000s
@@ -1128,15 +1215,16 @@ al/texlive/2014/texmf-dist/fonts/type1/public/amsfonts/cm/cmss8.pfb></usr/local
 l/texlive/2014/texmf-dist/fonts/type1/public/amsfonts/cm/cmssi10.pfb></usr/loca
 l/texlive/2014/texmf-dist/fonts/type1/public/amsfonts/cm/cmssi8.pfb></usr/local
 /texlive/2014/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/local/
-texlive/2014/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy6.pfb></usr/local/te
-xlive/2014/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy7.pfb></usr/local/texl
-ive/2014/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb></usr/local/texliv
-e/2014/texmf-dist/fonts/type1/public/amsfonts/euler/eusm10.pfb></usr/local/texl
-ive/2014/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb>
-Output written on presentation_1.pdf (20 pages, 528189 bytes).
+texlive/2014/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy5.pfb></usr/local/te
+xlive/2014/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy6.pfb></usr/local/texl
+ive/2014/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy7.pfb></usr/local/texliv
+e/2014/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb></usr/local/texlive/
+2014/texmf-dist/fonts/type1/public/amsfonts/euler/eusm10.pfb></usr/local/texliv
+e/2014/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb>
+Output written on presentation_1.pdf (27 pages, 704241 bytes).
 PDF statistics:
- 679 PDF objects out of 1000 (max. 8388607)
- 613 compressed objects within 7 object streams
- 44 named destinations out of 1000 (max. 500000)
- 125 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 896 PDF objects out of 1000 (max. 8388607)
+ 806 compressed objects within 9 object streams
+ 59 named destinations out of 1000 (max. 500000)
+ 168 words of extra memory for PDF output out of 10000 (max. 10000000)
 

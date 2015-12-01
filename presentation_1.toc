@@ -2,3 +2,4 @@
 \beamer@sectionintoc {1}{Reinforcement Learning}{3}{0}{1}
 \beamer@sectionintoc {2}{Markov Decision Processes}{8}{0}{2}
 \beamer@sectionintoc {3}{Value Functions}{11}{0}{3}
+\beamer@sectionintoc {4}{Examples}{20}{0}{4}
