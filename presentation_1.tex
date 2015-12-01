@@ -176,13 +176,13 @@ The agent's goal is to maximize the total amount of reward it receives over the 
 \begin{frame}
 \frametitle{Reinforcement Learning}
 \begin{itemize}
-\item Let the sequence of rewards after time step $t$ is $R_{t+1}, R_{t+2}, R_{t+3},...$, then we want to maximize the return $G_t$
+\item If the sequence of rewards after time step $t$ is $R_{t+1}, R_{t+2}, R_{t+3},...$, then we want to maximize the return $G_t$
 \item The agent chooses $A_t$ to maximize the discounted return: 
 \begin{equation}
-G_t = \sum_{k=0}^{\infty} \gamma^k R_{t+k+1}
+G_t = \sum_{k=0}^{T-t-1} \gamma^k R_{t+k+1}
 \nonumber
 \end{equation}
-where $\gamma$ is the discount rate and 0 $\geq \gamma \leq$ 1
+where $\gamma$ is the discount rate and 0 $\leq \gamma \leq$ 1
 \item The closer $\gamma$ is to 1, the more the agent accounts for future rewards
 \end{itemize}
 \end{frame}
@@ -196,7 +196,7 @@ where $\gamma$ is the discount rate and 0 $\geq \gamma \leq$ 1
 \begin{frame}
 \frametitle{Markov Property}
 \begin{itemize}
-\item Probability of transitioning to new state s with reward r:
+\item Probability of transitioning to new state s' with reward r:
 \small
 \begin{equation}
 p(s',r | s,a)=Pr\{S_{t+1}=s', R_{t+1}=r|S_0, A_0, R_1,...,S_{t-1},A_{t-1},R_t, S_t, A_t\}
@@ -222,7 +222,7 @@ p(s',r | s,a) = Pr\{S_{t+1} = s', R_{t+1} = r | S_t = s, A_t = a\}
 \begin{frame}
 \frametitle{Markov Decision Processes}
 \begin{itemize}
-\item A R.I. task that satisfies the Markov property is called a Markov Decision Process (MDP)
+\item A reinforcement learning task that satisfies the Markov property is called a Markov Decision Process (MDP)
 \item Given any state $s$ and action $a$, the probability of each possible pair of next state and reward ($s'$, $r$), is denoted
 \begin{equation}
 p(s',r | s,a) = Pr\{S_{t+1} = s', R_{t+1} = r | S_t = s, A_t = a\}
