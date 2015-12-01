@@ -84,7 +84,13 @@
 \usepackage{amssymb}
 \usepackage{amsmath}
 
-
+\AtBeginSection[]
+{
+  \begin{frame}<beamer>
+    \frametitle{Outline}
+    \tableofcontents[currentsection]
+  \end{frame}
+}
 %----------------------------------------------------------------------------------------
 %	TITLE PAGE
 %----------------------------------------------------------------------------------------
@@ -107,7 +113,7 @@
 \end{frame}
 
 \begin{frame}
-\frametitle{Overview} % Table of contents slide, comment this block out to remove it
+\frametitle{Outline} % Table of contents slide, comment this block out to remove it
 \tableofcontents % Throughout your presentation, if you choose to use \section{} and \subsection{} commands, these will automatically be printed on this slide as an overview of your presentation
 \end{frame}
 
@@ -292,6 +298,15 @@ q_\pi(s) = \mathbb{E}_\pi[G_t | S_t = s, A_t = a] = \mathbb{E}_\pi\Bigg[\sum_{k=
 \end{frame}
 
 
+%------------------------------------------------
+
+\begin{frame}
+\frametitle{Computing Value Functions}
+\begin{itemize}
+\item Key idea of reinforcement learning is to use value functions to search for a good policy $\pi$
+\item Can use dynamic programming techniques to compute optimal value functions, and thus find optimal policies
+\end{itemize}
+\end{frame}
 
 
 %------------------------------------------------
